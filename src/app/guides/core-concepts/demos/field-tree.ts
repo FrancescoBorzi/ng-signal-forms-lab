@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { Field, form } from '@angular/forms/signals';
+import { FormField, form } from '@angular/forms/signals';
 import { FormInspectorComponent } from '../../../ui/form-inspector.ts/form-inspector';
 import { DemoLayout } from '../../../ui/demo-layout/demo-layout';
 
@@ -15,7 +15,7 @@ interface MyDataModel {
 @Component({
   selector: 'field-tree',
   templateUrl: './field-tree.html',
-  imports: [Field, FormInspectorComponent, DemoLayout],
+  imports: [FormField, FormInspectorComponent, DemoLayout],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FieldTree {

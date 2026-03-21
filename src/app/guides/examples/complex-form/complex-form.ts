@@ -4,7 +4,7 @@ import {
   applyEach,
   applyWhen,
   createMetadataKey,
-  Field,
+  FormField,
   form,
   max,
   metadata,
@@ -78,7 +78,7 @@ const documentSchema = schema<Document>((documentPath) => {
 @Component({
   selector: 'complex-form',
   templateUrl: './complex-form.html',
-  imports: [Field, FormInspectorComponent, DemoLayout, FieldErrors],
+  imports: [FormField, FormInspectorComponent, DemoLayout, FieldErrors],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ComplexForm {

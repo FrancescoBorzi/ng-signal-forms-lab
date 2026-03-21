@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import {
   apply,
   createMetadataKey,
-  Field,
+  FormField,
   form,
   metadata,
   minLength,
@@ -42,7 +42,7 @@ const addressContactSchema = schema<AddressContact>((addressPath) => {
 @Component({
   selector: 'apply-logic',
   templateUrl: './apply-logic.html',
-  imports: [Field, FormInspectorComponent, DemoLayout, FieldErrors],
+  imports: [FormField, FormInspectorComponent, DemoLayout, FieldErrors],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ApplyLogic {

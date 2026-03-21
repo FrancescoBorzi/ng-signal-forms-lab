@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { customError, email, Field, form, required, schema, submit } from '@angular/forms/signals';
-import { delay, firstValueFrom, of } from 'rxjs';
+import { email, FormField, form, required, schema, submit } from '@angular/forms/signals';
+import { catchError, delay, firstValueFrom, map, of } from 'rxjs';
 import { FormInspectorComponent } from '../../../ui/form-inspector.ts/form-inspector';
 import { DemoLayout } from '../../../ui/demo-layout/demo-layout';
 import { FieldErrors } from '../../../ui/field-errors';
@@ -14,7 +14,7 @@ interface LoginForm {
   selector: 'simple-form',
   standalone: true,
   templateUrl: './simple-form.html',
-  imports: [Field, FormInspectorComponent, DemoLayout, FieldErrors],
+  imports: [FormField, FormInspectorComponent, DemoLayout, FieldErrors],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SimpleForm {
@@ -27,16 +27,24 @@ export class SimpleForm {
     }),
   );
 
-  protected submitForm(event: Event) {
+  protected async submitForm(event: Event): Promise<void> {
     event.preventDefault();
 
-    submit(this.loginForm, async (form) => {
-      try {
-        await firstValueFrom(of(form().value()).pipe(delay(4000)));
-        return undefined;
-      } catch (error) {
-        return customError({ message: 'Submission failed. Please try again.' });
-      }
+    await submit(this.loginForm, async (form) => {
+      return await firstValueFrom(
+        of(form().value()).pipe(
+          delay(4000),
+          map(() => {
+            return null;
+          }),
+          catchError(() =>
+            of({
+              kind: 'server',
+              message: 'An unexpected error occurred, please try again.',
+            }),
+          ),
+        ),
+      );
     });
   }
 }

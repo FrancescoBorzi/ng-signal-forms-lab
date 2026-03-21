@@ -1,5 +1,5 @@
 import { Signal, WritableSignal } from '@angular/core';
-import { DisabledReason, Field, FieldTree, ValidationError } from '@angular/forms/signals';
+import { DisabledReason, FormField, FieldTree, ValidationError } from '@angular/forms/signals';
 
 export interface FieldNodeStructure {
   logic: any;
@@ -22,7 +22,7 @@ export interface FieldNode {
   get disabledReasons(): Signal<readonly DisabledReason[]>;
   get hidden(): Signal<boolean>;
   get readonly(): Signal<boolean>;
-  get fieldBindings(): Signal<readonly Field<unknown>[]>;
+  get fieldBindings(): Signal<readonly FormField<unknown>[]>;
   get submitting(): Signal<boolean>;
   get name(): Signal<string>;
   get max(): Signal<number | undefined> | undefined;

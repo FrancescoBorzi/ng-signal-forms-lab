@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, effect, signal } from '@angular/cor
 import {
   applyEach,
   applyWhen,
-  Field,
+  FormField,
   form,
   max,
   min,
@@ -50,7 +50,7 @@ const documentSchema = schema<Document>((documentPath) => {
 @Component({
   selector: 'apply-when-logic',
   templateUrl: './apply-when-logic.html',
-  imports: [Field, FormInspectorComponent, DemoLayout],
+  imports: [FormField, FormInspectorComponent, DemoLayout],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ApplyWhenLogic {

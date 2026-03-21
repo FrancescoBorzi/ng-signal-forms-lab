@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { disabled, Field, form, schema } from '@angular/forms/signals';
+import { disabled, FormField, form, schema } from '@angular/forms/signals';
 import { Slider } from './slider';
 import { FormInspectorComponent } from '../../../ui/form-inspector.ts/form-inspector';
 import { DemoLayout } from '../../../ui/demo-layout/demo-layout';
@@ -12,7 +12,7 @@ interface MyDataModel {
 @Component({
   selector: 'custom-control-demo',
   templateUrl: './custom-control-demo.html',
-  imports: [Field, Slider, FormInspectorComponent, DemoLayout],
+  imports: [FormField, Slider, FormInspectorComponent, DemoLayout],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CustomControlDemo {

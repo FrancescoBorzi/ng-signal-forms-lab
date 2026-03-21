@@ -8,7 +8,7 @@
       <div class="mb-2">
         <label class="input-label" for="name"> Name </label>
         <input
-          [field]="shippingForm.sender.name"
+          [formField]="shippingForm.sender.name"
           class="input-field"
           id="name"
           type="text"
@@ -21,7 +21,7 @@
         <div class="mb-2 mr-2">
           <label class="input-label" for="country"> Country </label>
           <input
-            [field]="shippingForm.sender.address.country"
+            [formField]="shippingForm.sender.address.country"
             class="input-field"
             id="address-country"
             placeholder="Country"
@@ -32,7 +32,7 @@
         <div class="mb-2 mr-2">
           <label class="input-label" for="address-city"> City </label>
           <input
-            [field]="shippingForm.sender.address.city"
+            [formField]="shippingForm.sender.address.city"
             class="input-field"
             id="address-city"
             placeholder="City"
@@ -45,7 +45,7 @@
         <div class="mb-2 mr-2">
           <label class="input-label" for="address-postal"> Postal Code </label>
           <input
-            [field]="shippingForm.sender.address.postalCode"
+            [formField]="shippingForm.sender.address.postalCode"
             class="input-field"
             id="address-postal-code"
             placeholder="Postal Code"
@@ -56,7 +56,7 @@
         <div class="mb-2 mr-2">
           <label class="input-label" for="address"> Street </label>
           <input
-            [field]="shippingForm.sender.address.street"
+            [formField]="shippingForm.sender.address.street"
             class="input-field"
             id="address-street"
             placeholder="Street"
@@ -71,7 +71,7 @@
       <div class="mb-2">
         <label class="input-label" for="name"> Name </label>
         <input
-          [field]="shippingForm.recipient.name"
+          [formField]="shippingForm.recipient.name"
           class="input-field"
           id="name"
           type="text"
@@ -84,7 +84,7 @@
         <div class="mb-2 mr-2">
           <label class="input-label" for="country"> Country </label>
           <input
-            [field]="shippingForm.recipient.address.country"
+            [formField]="shippingForm.recipient.address.country"
             class="input-field"
             id="address-country"
             placeholder="Country"
@@ -95,7 +95,7 @@
         <div class="mb-2 mr-2">
           <label class="input-label" for="address-city"> City </label>
           <input
-            [field]="shippingForm.recipient.address.city"
+            [formField]="shippingForm.recipient.address.city"
             class="input-field"
             id="address-city"
             placeholder="City"
@@ -108,7 +108,7 @@
         <div class="mb-2 mr-2">
           <label class="input-label" for="address-postal"> Postal Code </label>
           <input
-            [field]="shippingForm.recipient.address.postalCode"
+            [formField]="shippingForm.recipient.address.postalCode"
             class="input-field"
             id="address-postal-code"
             placeholder="Postal Code"
@@ -119,7 +119,7 @@
         <div class="mb-2 mr-2">
           <label class="input-label" for="address"> Street </label>
           <input
-            [field]="shippingForm.recipient.address.street"
+            [formField]="shippingForm.recipient.address.street"
             class="input-field"
             id="address-street"
             placeholder="Street"
@@ -132,11 +132,16 @@
     <fieldset>
       <legend>Select the type of shipment:</legend>
       <div>
-        <input [field]="shippingForm.shipmentType" type="radio" id="document" value="document" />
+        <input
+          [formField]="shippingForm.shipmentType"
+          type="radio"
+          id="document"
+          value="document"
+        />
         <label class="ml-2" for="document">Document</label>
       </div>
       <div>
-        <input [field]="shippingForm.shipmentType" type="radio" id="package" value="package" />
+        <input [formField]="shippingForm.shipmentType" type="radio" id="package" value="package" />
         <label class="ml-2" for="package">Package</label>
       </div>
     </fieldset>
@@ -155,7 +160,7 @@
           <div class="mb-2">
             <label class="input-label" for="description-{{ idx }}"> Description </label>
             <input
-              [field]="item.description"
+              [formField]="item.description"
               class="input-field"
               id="description-{{ idx }}"
               type="text"
@@ -169,7 +174,7 @@
             <div class="mb-2 mr-2">
               <label class="input-label" for="length-{{ idx }}"> Length </label>
               <input
-                [field]="item.dimensions.length"
+                [formField]="item.dimensions.length"
                 class="input-field"
                 id="length-{{ idx }}"
                 type="number"
@@ -180,7 +185,7 @@
             <div class="mb-2 mr-2">
               <label class="input-label" for="width-{{ idx }}"> Width </label>
               <input
-                [field]="item.dimensions.width"
+                [formField]="item.dimensions.width"
                 class="input-field"
                 id="width-{{ idx }}"
                 type="number"
@@ -191,7 +196,7 @@
             <div class="mb-2">
               <label class="input-label" for="height-{{ idx }}"> Height </label>
               <input
-                [field]="item.dimensions.height"
+                [formField]="item.dimensions.height"
                 class="input-field"
                 id="height-{{ idx }}"
                 type="number"
@@ -204,7 +209,7 @@
           <div class="mb-2 mr-2">
             <label class="input-label" for="weight-{{ idx }}"> Weight </label>
             <input
-              [field]="item.weight"
+              [formField]="item.weight"
               class="input-field"
               id="weight-{{ idx }}"
               type="number"
@@ -230,7 +235,7 @@
           <div class="mb-2">
             <label class="input-label" for="doc-description-{{ idx }}"> Description </label>
             <input
-              [field]="item.description"
+              [formField]="item.description"
               class="input-field"
               id="doc-description-{{ idx }}"
               type="text"
@@ -242,7 +247,7 @@
           <div class="mb-2 mr-2">
             <label class="input-label" for="doc-weight-{{ idx }}"> Weight </label>
             <input
-              [field]="item.weight"
+              [formField]="item.weight"
               class="input-field"
               id="doc-weight-{{ idx }}"
               type="number"

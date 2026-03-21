@@ -45,7 +45,7 @@ You can see how the `Field` directive is used in the HTML file of the following 
 
 ### Field Logic
 
-Now that every field node is synchronized with the corresponding UI element using the `[field]` directive, we can add logic to it. We can add the follwing types of logic in our form fields.
+Now that every field node is synchronized with the corresponding UI element using the `[formField]` directive, we can add logic to it. We can add the follwing types of logic in our form fields.
 
 | Type of logic                       | Description                                                                                                         |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------- |

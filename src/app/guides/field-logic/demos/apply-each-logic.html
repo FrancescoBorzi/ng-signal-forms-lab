@@ -13,7 +13,7 @@
         <div class="mb-2">
           <label class="input-label" for="description-{{ idx }}"> Description </label>
           <input
-            [field]="item.description"
+            [formField]="item.description"
             class="input-field"
             id="description-{{ idx }}"
             type="text"
@@ -26,7 +26,7 @@
           <div class="mb-2 mr-2">
             <label class="input-label" for="length-{{ idx }}"> Length </label>
             <input
-              [field]="item.dimensions.length"
+              [formField]="item.dimensions.length"
               class="input-field"
               id="length-{{ idx }}"
               type="number"
@@ -37,7 +37,7 @@
           <div class="mb-2 mr-2">
             <label class="input-label" for="width-{{ idx }}"> Width </label>
             <input
-              [field]="item.dimensions.width"
+              [formField]="item.dimensions.width"
               class="input-field"
               id="width-{{ idx }}"
               type="number"
@@ -48,7 +48,7 @@
           <div class="mb-2">
             <label class="input-label" for="height-{{ idx }}"> Height </label>
             <input
-              [field]="item.dimensions.height"
+              [formField]="item.dimensions.height"
               class="input-field"
               id="height-{{ idx }}"
               type="number"
@@ -61,7 +61,7 @@
         <div class="mb-2 mr-2">
           <label class="input-label" for="weight-{{ idx }}"> Weight </label>
           <input
-            [field]="item.weight"
+            [formField]="item.weight"
             class="input-field"
             id="weight-{{ idx }}"
             type="number"
